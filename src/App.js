@@ -24,9 +24,34 @@ function App() {
       console.error(error);
     }
    }
+
+   async function  postt(){
+
+    console.log("athmikha");
+    const data = {
+      name: 'Athmikha',
+      description: 'athmikha',
+      public: true
+    };
+    
+    const config = {
+      headers: {
+        Authorization: '8126e0fe71084696abab461fac70edfd',
+        'Content-Type': 'application/json'
+      }
+    };
+    
+    
+    try {
+      const response =  await axios.post('https://api.spotify.com/v1/users/31fydzi2soazdnsivavpknkpijmq/playlists', data, config)
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+   }
   return (
     <div className="App">
-         <button  onClick={athmikha}>athmikha</button>
+         <button  onClick={postt}>athmikha</button>
     </div>
   );
 }
